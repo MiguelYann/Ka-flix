@@ -3,7 +3,7 @@
 VISIT [Kaïflix](https://kaiflix-e4939.web.app/)
 
 Kaiflix is an event for streaming talk powered by [Kaibee](https://kaibee.fr/).
-I have the chance to be the first speaker to animate that. This Web application show the count downtime until the datea and funny contents that will be display day to day.
+I have the chance to be the first speaker to animate that. This Web application show the count downtime until the date and funny contents that will be display day to day.
 
 The event will be online on **3 December 2020**
 
