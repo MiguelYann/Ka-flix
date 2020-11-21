@@ -20,6 +20,6 @@ If you are interested, let's sign up [Here](https://doodle.com/poll/a2w9iatz3a9d
 
 ## Deployment Tools
 
-***Kaïflix*** is deploy with:
+***Kaïflix*** is deployed with:
 
 * **Firebase Hosting**
