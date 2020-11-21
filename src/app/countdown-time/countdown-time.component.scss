@@ -1,0 +1,25 @@
+.countdown {
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  align-content: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  .measurements {
+    flex: 0.1;    
+    margin: 0 18px;
+
+    .divider {
+      float: right;
+    }
+  }  
+}
+.measurements-number {
+  color: red;
+  font-weight: 400;
+}
+
+span{
+  margin: 0 12px;
+}
