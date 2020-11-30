@@ -14,6 +14,5 @@ export class QuoteComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
    this.textQuote = changes.textQuote.currentValue;
-   console.log(this.textQuote);
   }
 }
