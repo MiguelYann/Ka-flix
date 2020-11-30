@@ -4,10 +4,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-countdown-time',
   templateUrl: './countdown-time.component.html',
-  styleUrls: ['./countdown-time.component.scss']
+  styleUrls: ['./countdown-time.component.scss'],
 })
 export class CountdownTimeComponent {
-
   @Input() units: any;
   @Input() end: any;
   @Input() displayString: String = '';
@@ -19,14 +18,14 @@ export class CountdownTimeComponent {
   displayNumbers: any = [];
   wasReached: Boolean = false;
 
+
   constructor() {
     setInterval(() => this._displayString(), 100);
+
   }
 
   _displayString() {
-
-    if (this.wasReached)
-      return;
+    if (this.wasReached) return;
 
     if (typeof this.units === 'string') {
       this.units = this.units.split('|');
@@ -36,22 +35,25 @@ export class CountdownTimeComponent {
     let now: any = new Date();
     let dateDifference: any = givenDate - now;
 
-    if ((dateDifference < 100 && dateDifference > 0) || dateDifference < 0 && !this.wasReached) {
+    if (
+      (dateDifference < 100 && dateDifference > 0) ||
+      (dateDifference < 0 && !this.wasReached)
+    ) {
       this.wasReached = true;
       this.reached.next(now);
     }
 
     let lastUnit = this.units[this.units.length - 1],
       unitConstantForMillisecs: any = {
-        year: (((1000 * 60 * 60 * 24 * 7) * 4) * 12),
-        month: ((1000 * 60 * 60 * 24 * 7) * 4),
-        weeks: (1000 * 60 * 60 * 24 * 7),
-        days: (1000 * 60 * 60 * 24),
-        hours: (1000 * 60 * 60),
-        minutes: (1000 * 60),
-        seconds: 1000
+        year: 1000 * 60 * 60 * 24 * 7 * 4 * 12,
+        month: 1000 * 60 * 60 * 24 * 7 * 4,
+        weeks: 1000 * 60 * 60 * 24 * 7,
+        days: 1000 * 60 * 60 * 24,
+        hours: 1000 * 60 * 60,
+        minutes: 1000 * 60,
+        seconds: 1000,
       },
-      unitsLeft:any = {},
+      unitsLeft: any = {},
       returnText = '',
       returnNumbers = '',
       totalMillisecsLeft = dateDifference,
@@ -60,19 +62,25 @@ export class CountdownTimeComponent {
 
     for (i in this.units) {
       if (this.units.hasOwnProperty(i)) {
-
         unit = this.units[i].trim();
         if (unitConstantForMillisecs[unit.toLowerCase()] === false) {
           //$interval.cancel(countDownInterval);
           throw new Error('Cannot repeat unit: ' + unit);
-
         }
-        if (unitConstantForMillisecs.hasOwnProperty(unit.toLowerCase()) === false) {
-          throw new Error('Unit: ' + unit + ' is not supported. Please use following units: year, month, weeks, days, hours, minutes, seconds, milliseconds');
+        if (
+          unitConstantForMillisecs.hasOwnProperty(unit.toLowerCase()) === false
+        ) {
+          throw new Error(
+            'Unit: ' +
+              unit +
+              ' is not supported. Please use following units: year, month, weeks, days, hours, minutes, seconds, milliseconds'
+          );
         }
 
         // If it was reached, everything is zero
-        unitsLeft[unit] = (this.wasReached) ? 0 : totalMillisecsLeft / unitConstantForMillisecs[unit.toLowerCase()];
+        unitsLeft[unit] = this.wasReached
+          ? 0
+          : totalMillisecsLeft / unitConstantForMillisecs[unit.toLowerCase()];
 
         if (lastUnit === unit) {
           unitsLeft[unit] = Math.ceil(unitsLeft[unit]);
@@ -80,11 +88,12 @@ export class CountdownTimeComponent {
           unitsLeft[unit] = Math.floor(unitsLeft[unit]);
         }
 
-        totalMillisecsLeft -= unitsLeft[unit] * unitConstantForMillisecs[unit.toLowerCase()];
+        totalMillisecsLeft -=
+          unitsLeft[unit] * unitConstantForMillisecs[unit.toLowerCase()];
         unitConstantForMillisecs[unit.toLowerCase()] = false;
 
         // If it's less than 0, round to 0
-        unitsLeft[unit] = (unitsLeft[unit] > 0) ? unitsLeft[unit] : 0;
+        unitsLeft[unit] = unitsLeft[unit] > 0 ? unitsLeft[unit] : 0;
 
         returnNumbers += ' ' + unitsLeft[unit] + ' | ';
         returnText += ' ' + unit;
@@ -100,7 +109,7 @@ export class CountdownTimeComponent {
         Hours: 'Heures',
         Minutes: 'Minutes',
         Seconds: 'Secondes',
-        MilliSeconds: 'Milliseconds'
+        MilliSeconds: 'Milliseconds',
       };
     }
 
@@ -116,5 +125,4 @@ export class CountdownTimeComponent {
     this.displayNumbers = returnNumbers.split('|');
     this.display = this.displayString.split('|');
   }
-
 }

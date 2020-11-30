@@ -1,3 +1,4 @@
+import { quoteData } from './data/quotes';
 import { Component, Pipe } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { timer } from 'rxjs';
@@ -14,6 +15,20 @@ export class AppComponent {
   myParams: object = {};
   width: number = 100;
   height: number = 100;
+  currentIndex: number = quoteData.length;
+  quote: string = quoteData[0];
+  constructor() {
+    setInterval(() => {
+      this.currentIndex--;
+      if (this.currentIndex < 0) {
+        this.currentIndex = quoteData.length;
+        this.quote = quoteData[0];
+      }
+      else{
+        this.quote = quoteData[this.currentIndex];
+      }
+    }, 60000);
+  }
 
   ngOnInit(): void {
     this.myStyle = {
