@@ -4,11 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountdownTimeComponent } from './countdown-time/countdown-time.component';
 import { ParticlesModule } from 'angular-particle';
+import { QuoteComponent } from './quote/quote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountdownTimeComponent,
+    QuoteComponent,
   ],
   imports: [
     BrowserModule,

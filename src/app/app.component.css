@@ -53,3 +53,7 @@ a:hover{
 .container-content {
   margin: 62px;
 }
+
+.quote {
+  text-align: center;
+}
