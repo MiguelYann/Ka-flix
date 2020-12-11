@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class CountdownTimeComponent {
   @Input() units: any;
   @Input() end: any;
-  @Input() displayString: String = '';
+  @Input() displayString: string = '';
   @Input() text: any;
   @Input() divider: any;
-  @Input() showZero: Boolean = false;
+  @Input() showZero: boolean = false;
   @Output() reached: EventEmitter<Date> = new EventEmitter();
   display: any = [];
   displayNumbers: any = [];
-  wasReached: Boolean = false;
+  wasReached: boolean = false;
 
   constructor() {
     setInterval(() => this._displayString(), 100);
