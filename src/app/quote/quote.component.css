@@ -1,3 +1,37 @@
 q {
 color: white;
 }
+
+.form-group {
+  padding: 30px;
+}
+
+div {
+color: white;
+}
+button {
+  border: 1px solid red !important;
+  background-color: red;
+  color: white;
+  width: 35%;
+  height: 10%;
+  margin: 30px auto;
+  display: block;
+  }
+
+  button:hover{
+    color: white;
+    font-weight: bold;
+  }
+
+  textarea {
+    width: 50%;
+    margin: 12px auto;
+    font-size: 0.8rem;
+  }
+
+  .alert {
+    width: 50%;
+    margin: 12px auto;
+    color: black;
+  }

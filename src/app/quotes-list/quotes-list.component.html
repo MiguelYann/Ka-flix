@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>PUB</h2>
+  <h2>
+    Vous avez Les {{ quoteList.length }} plus belles citations du monde,<b
+      >EN EXCLUSIVITÉ</b
+    >
+  </h2>
+  <table>
+    <tr
+      *ngFor="
+        let item of quoteList | paginate: { itemsPerPage: 10, currentPage: p };
+        let index = index
+      "
+    >
+      <td>⭐️ {{ item.text }}</td>
+    </tr>
+  </table>
+
+  <div class="pag">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

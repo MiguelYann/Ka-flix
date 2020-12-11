@@ -1,1 +1,21 @@
-<q>{{textQuote}}</q>
+<div class="form-group">
+  <form #form="ngForm" ngForm>
+    <label for="">Et si on vous disait citation, que diriez-vous?</label>
+    <textarea
+      placeholder="Saisissez vos citations"
+      [(ngModel)]="quoteUser"
+      class="form-control"
+      name="quoteUser"
+      id=""
+      rows="3"
+    ></textarea>
+    <button (click)="postQuote()" type="button" class="btn btn-default">
+      Envoyez-nous vos citations, c'est anonyme 😊
+    </button>
+    <div *ngIf="isPosted" class="alert alert-success" role="alert">
+      Merci d'avoir participé,à ce soir!
+    </div>
+  </form>
+</div>
+
+<q>{{ textQuote }}</q>

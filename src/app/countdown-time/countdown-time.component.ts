@@ -18,10 +18,8 @@ export class CountdownTimeComponent {
   displayNumbers: any = [];
   wasReached: Boolean = false;
 
-
   constructor() {
     setInterval(() => this._displayString(), 100);
-
   }
 
   _displayString() {

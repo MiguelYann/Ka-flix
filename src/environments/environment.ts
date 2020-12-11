@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  firebase: {
+    apiKey: 'AIzaSyCa_id0HmQUXrir0pg31G_uK8zHwbggmxk',
+    authDomain: 'kaiflix-e4939.firebaseapp.com',
+    databaseURL: 'https://kaiflix-e4939.firebaseio.com',
+    projectId: 'kaiflix-e4939',
+    storageBucket: 'kaiflix-e4939.appspot.com',
+    messagingSenderId: '158241347577',
+    appId: '1:158241347577:web:3042acf11b5b026fd50f28',
+  },
 };
 
 /*

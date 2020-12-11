@@ -36,8 +36,8 @@ h4 {
 }
 
 a {
-border: 1px solid red !important;
-color: white;
+/* border: 1px solid red !important; */
+color: red;
 width: 35%;
 height: 10%;
 margin: 30px auto;
@@ -45,8 +45,8 @@ display: block;
 }
 
 a:hover{
-  background-color: red;
-  color: white;
+  /* background-color: red; */
+  color: red;
   font-weight: bold;
 }
 
@@ -55,7 +55,8 @@ a:hover{
 }
 
 .quote {
-  text-align: center;
+  text-align: justify;
+  justify-content: start;
 }
 
 .col-sm-12 {

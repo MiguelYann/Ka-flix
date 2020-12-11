@@ -1,0 +1,25 @@
+* {
+  color: white;
+  margin: 65px auto;
+}
+
+.pag {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+tr{
+  line-height: 2;
+  margin-bottom: 10px;
+}
+td{
+  line-height: 2;
+  margin: 20px;
+}
+table{
+  padding: 20px;
+}
+b{color: red;}

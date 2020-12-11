@@ -1,4 +1,4 @@
-import { quoteData } from './data/quotes';
+import { quoteData } from './data/initQuotes';
 import { Component, Pipe } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { timer } from 'rxjs';
